@@ -3,18 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoAgenciaTI111T", "ProjetoAgenciaTI111T\ProjetoAgenciaTI111T.csproj", "{D72B058A-BC6E-4007-8F5D-5C8D2743740D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoAgenciaTI111T", "ProjetoAgenciaTI111T\ProjetoAgenciaTI111T.csproj", "{D72B058A-BC6E-4007-8F5D-5C8D2743740D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM32 = Debug|ARM32
 		Release|Any CPU = Release|Any CPU
+		Release|ARM32 = Release|ARM32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Debug|ARM32.ActiveCfg = Debug|ARM32
+		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Debug|ARM32.Build.0 = Debug|ARM32
 		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Release|ARM32.ActiveCfg = Release|ARM32
+		{D72B058A-BC6E-4007-8F5D-5C8D2743740D}.Release|ARM32.Build.0 = Release|ARM32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
