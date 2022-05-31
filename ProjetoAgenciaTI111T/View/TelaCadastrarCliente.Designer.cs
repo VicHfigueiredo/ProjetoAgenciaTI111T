@@ -96,6 +96,7 @@ namespace ProjetoAgenciaTI111T.View
             this.tbxEmailCliente.Name = "tbxEmailCliente";
             this.tbxEmailCliente.Size = new System.Drawing.Size(358, 23);
             this.tbxEmailCliente.TabIndex = 5;
+            this.tbxEmailCliente.TextChanged += new System.EventHandler(this.tbxEmailCliente_TextChanged);
             // 
             // tbxSenhaCliente
             // 
@@ -114,6 +115,7 @@ namespace ProjetoAgenciaTI111T.View
             this.btnSalvarCiente.TabIndex = 7;
             this.btnSalvarCiente.Text = "Salvar";
             this.btnSalvarCiente.UseVisualStyleBackColor = true;
+            this.btnSalvarCiente.Click += new System.EventHandler(this.btnSalvarCiente_Click);
             // 
             // pictureBoxFotoCliente
             // 
