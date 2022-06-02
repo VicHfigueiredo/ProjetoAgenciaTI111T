@@ -40,6 +40,7 @@ namespace ProjetoAgenciaTI111T.View
             this.btnSalvarCiente = new System.Windows.Forms.Button();
             this.pictureBoxFotoCliente = new System.Windows.Forms.PictureBox();
             this.btnBuscarFotoCliente = new System.Windows.Forms.Button();
+            this.openFileDialogImagem = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@ namespace ProjetoAgenciaTI111T.View
             this.tbxEmailCliente.Name = "tbxEmailCliente";
             this.tbxEmailCliente.Size = new System.Drawing.Size(358, 23);
             this.tbxEmailCliente.TabIndex = 5;
-            this.tbxEmailCliente.TextChanged += new System.EventHandler(this.tbxEmailCliente_TextChanged);
+
             // 
             // tbxSenhaCliente
             // 
@@ -135,6 +136,11 @@ namespace ProjetoAgenciaTI111T.View
             this.btnBuscarFotoCliente.TabIndex = 9;
             this.btnBuscarFotoCliente.Text = "Buscar Imagem";
             this.btnBuscarFotoCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarFotoCliente.Click += new System.EventHandler(this.btnBuscarFotoCliente_Click);
+            // 
+            // openFileDialogImagem
+            // 
+            this.openFileDialogImagem.FileName = "openFileDialogImagem";
             // 
             // TelaCadastrarCliente
             // 
@@ -153,10 +159,13 @@ namespace ProjetoAgenciaTI111T.View
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.lblCadastroCliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "TelaCadastrarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Agência de Viagens - Cadastrar Cliente";
+
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelaCadastrarCliente_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,5 +184,6 @@ namespace ProjetoAgenciaTI111T.View
         private System.Windows.Forms.Button btnSalvarCiente;
         private System.Windows.Forms.PictureBox pictureBoxFotoCliente;
         private System.Windows.Forms.Button btnBuscarFotoCliente;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImagem;
     }
 }
