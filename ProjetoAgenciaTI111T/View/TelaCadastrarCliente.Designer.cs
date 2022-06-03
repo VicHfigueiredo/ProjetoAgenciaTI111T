@@ -97,7 +97,6 @@ namespace ProjetoAgenciaTI111T.View
             this.tbxEmailCliente.Name = "tbxEmailCliente";
             this.tbxEmailCliente.Size = new System.Drawing.Size(358, 23);
             this.tbxEmailCliente.TabIndex = 5;
-
             // 
             // tbxSenhaCliente
             // 
@@ -164,7 +163,7 @@ namespace ProjetoAgenciaTI111T.View
             this.Name = "TelaCadastrarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Agência de Viagens - Cadastrar Cliente";
-
+            this.Load += new System.EventHandler(this.TelaCadastrarCliente_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelaCadastrarCliente_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoCliente)).EndInit();
             this.ResumeLayout(false);

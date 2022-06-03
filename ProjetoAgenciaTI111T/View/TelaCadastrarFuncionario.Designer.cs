@@ -89,6 +89,7 @@ namespace ProjetoAgenciaTI111T.View
             this.btnSalvarFuncionario.TabIndex = 4;
             this.btnSalvarFuncionario.Text = "Salvar";
             this.btnSalvarFuncionario.UseVisualStyleBackColor = true;
+            this.btnSalvarFuncionario.Click += new System.EventHandler(this.btnSalvarFuncionario_Click);
             // 
             // tbxNomeFuncionario
             // 
@@ -127,9 +128,12 @@ namespace ProjetoAgenciaTI111T.View
             this.Controls.Add(this.lblNomeFuncionario);
             this.Controls.Add(this.lblCadastriFuncionario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "TelaCadastrarFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Agência de Viagens -Cadastrar Funcionário";
+            this.Load += new System.EventHandler(this.TelaCadastrarFuncionario_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelaCadastrarFuncionario_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

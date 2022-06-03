@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
+using ProjetoAgenciaTI111T.Model;
 
 namespace ProjetoAgenciaTI111T.Controller
 {
@@ -25,10 +27,27 @@ namespace ProjetoAgenciaTI111T.Controller
                 cmd.Parameters.AddWithValue("@dataVoltaPac", "");
                 cmd.Parameters.AddWithValue("@descricaoPac", "");
                 cmd.Parameters.AddWithValue("@imagemPac", "");
+
+                SqlParameter nv = cmd.Parameters.AddWithValue("@codigoFun", SqlDbType.Int);
+                nv.Direction = ParameterDirection.Output;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+
+                var resposta = MessageBox.Show("Cadastro do pacote efetuado com sucesso, deseja efetuar um novo registro?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resposta == DialogResult.Yes)
+                {
+                    Pacote.Retorno = "Sim";
+                    return;
+                }
+                else
+                {
+                    Pacote.Retorno = "Não";
+                }
+            
             }
-            catch (Exception)
+            catch
             {
-                throw;
+                
             }
         }
     }

@@ -87,6 +87,10 @@ namespace ProjetoAgenciaTI111T.View
             this.Close();
         }
 
+        private void TelaCadastrarCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -39,14 +39,15 @@ namespace ProjetoAgenciaTI111T.View
             this.lblDescricaoPacote = new System.Windows.Forms.Label();
             this.dataIdaPacote = new System.Windows.Forms.DateTimePicker();
             this.dataVoltaPacote = new System.Windows.Forms.DateTimePicker();
-            this.tbxDescricaoPacote = new System.Windows.Forms.RichTextBox();
+            this.rtxDescricaoPacote = new System.Windows.Forms.RichTextBox();
             this.tbxValorPacote = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFotoPacote = new System.Windows.Forms.PictureBox();
             this.btnSalvarPacote = new System.Windows.Forms.Button();
+            this.openFileDialogImagemPacote = new System.Windows.Forms.OpenFileDialog();
+            this.tbxOrigemPac = new System.Windows.Forms.TextBox();
+            this.tbxDestinoPac = new System.Windows.Forms.TextBox();
             this.btnBuscarImagemPacote = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPacote)).BeginInit();
             this.SuspendLayout();
             // 
             // cadastrarPacote
@@ -135,13 +136,13 @@ namespace ProjetoAgenciaTI111T.View
             this.dataVoltaPacote.Size = new System.Drawing.Size(133, 23);
             this.dataVoltaPacote.TabIndex = 11;
             // 
-            // tbxDescricaoPacote
+            // rtxDescricaoPacote
             // 
-            this.tbxDescricaoPacote.Location = new System.Drawing.Point(136, 193);
-            this.tbxDescricaoPacote.Name = "tbxDescricaoPacote";
-            this.tbxDescricaoPacote.Size = new System.Drawing.Size(222, 47);
-            this.tbxDescricaoPacote.TabIndex = 12;
-            this.tbxDescricaoPacote.Text = "";
+            this.rtxDescricaoPacote.Location = new System.Drawing.Point(136, 193);
+            this.rtxDescricaoPacote.Name = "rtxDescricaoPacote";
+            this.rtxDescricaoPacote.Size = new System.Drawing.Size(222, 47);
+            this.rtxDescricaoPacote.TabIndex = 12;
+            this.rtxDescricaoPacote.Text = "";
             // 
             // tbxValorPacote
             // 
@@ -150,30 +151,14 @@ namespace ProjetoAgenciaTI111T.View
             this.tbxValorPacote.Size = new System.Drawing.Size(114, 23);
             this.tbxValorPacote.TabIndex = 7;
             // 
-            // comboBox1
+            // pictureBoxFotoPacote
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(122, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 13;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(122, 146);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 23);
-            this.comboBox2.TabIndex = 14;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox1.Location = new System.Drawing.Point(490, 87);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(258, 123);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxFotoPacote.BackColor = System.Drawing.Color.Silver;
+            this.pictureBoxFotoPacote.Location = new System.Drawing.Point(490, 87);
+            this.pictureBoxFotoPacote.Name = "pictureBoxFotoPacote";
+            this.pictureBoxFotoPacote.Size = new System.Drawing.Size(258, 123);
+            this.pictureBoxFotoPacote.TabIndex = 15;
+            this.pictureBoxFotoPacote.TabStop = false;
             // 
             // btnSalvarPacote
             // 
@@ -183,15 +168,35 @@ namespace ProjetoAgenciaTI111T.View
             this.btnSalvarPacote.TabIndex = 16;
             this.btnSalvarPacote.Text = "Salvar";
             this.btnSalvarPacote.UseVisualStyleBackColor = true;
+            this.btnSalvarPacote.Click += new System.EventHandler(this.btnSalvarPacote_Click);
+            // 
+            // openFileDialogImagemPacote
+            // 
+            this.openFileDialogImagemPacote.FileName = "openFileDialogImagemPacote";
+            // 
+            // tbxOrigemPac
+            // 
+            this.tbxOrigemPac.Location = new System.Drawing.Point(122, 89);
+            this.tbxOrigemPac.Name = "tbxOrigemPac";
+            this.tbxOrigemPac.Size = new System.Drawing.Size(179, 23);
+            this.tbxOrigemPac.TabIndex = 17;
+            // 
+            // tbxDestinoPac
+            // 
+            this.tbxDestinoPac.Location = new System.Drawing.Point(122, 146);
+            this.tbxDestinoPac.Name = "tbxDestinoPac";
+            this.tbxDestinoPac.Size = new System.Drawing.Size(179, 23);
+            this.tbxDestinoPac.TabIndex = 18;
             // 
             // btnBuscarImagemPacote
             // 
-            this.btnBuscarImagemPacote.Location = new System.Drawing.Point(575, 231);
+            this.btnBuscarImagemPacote.Location = new System.Drawing.Point(589, 245);
             this.btnBuscarImagemPacote.Name = "btnBuscarImagemPacote";
-            this.btnBuscarImagemPacote.Size = new System.Drawing.Size(105, 25);
-            this.btnBuscarImagemPacote.TabIndex = 17;
-            this.btnBuscarImagemPacote.Text = "Buscar Imagem";
+            this.btnBuscarImagemPacote.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarImagemPacote.TabIndex = 19;
+            this.btnBuscarImagemPacote.Text = "button1";
             this.btnBuscarImagemPacote.UseVisualStyleBackColor = true;
+            this.btnBuscarImagemPacote.Click += new System.EventHandler(this.btnBuscarImagemPacote_Click_1);
             // 
             // TelaCadastrarPacote
             // 
@@ -201,11 +206,11 @@ namespace ProjetoAgenciaTI111T.View
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBuscarImagemPacote);
+            this.Controls.Add(this.tbxDestinoPac);
+            this.Controls.Add(this.tbxOrigemPac);
             this.Controls.Add(this.btnSalvarPacote);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.tbxDescricaoPacote);
+            this.Controls.Add(this.pictureBoxFotoPacote);
+            this.Controls.Add(this.rtxDescricaoPacote);
             this.Controls.Add(this.dataVoltaPacote);
             this.Controls.Add(this.dataIdaPacote);
             this.Controls.Add(this.tbxValorPacote);
@@ -217,11 +222,14 @@ namespace ProjetoAgenciaTI111T.View
             this.Controls.Add(this.lblValorPacote);
             this.Controls.Add(this.cadastrarPacote);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "TelaCadastrarPacote";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Agência de Viagens - Cadastrar Funcionário";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.TelaCadastrarPacote_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelaCadastrarPacote_KeyPress);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPacote)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,12 +246,13 @@ namespace ProjetoAgenciaTI111T.View
         private System.Windows.Forms.Label lblDescricaoPacote;
         private System.Windows.Forms.DateTimePicker dataIdaPacote;
         private System.Windows.Forms.DateTimePicker dataVoltaPacote;
-        private System.Windows.Forms.RichTextBox tbxDescricaoPacote;
+        private System.Windows.Forms.RichTextBox rtxDescricaoPacote;
         private System.Windows.Forms.TextBox tbxValorPacote;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxFotoPacote;
         private System.Windows.Forms.Button btnSalvarPacote;
+        private System.Windows.Forms.OpenFileDialog openFileDialogImagemPacote;
+        private System.Windows.Forms.TextBox tbxOrigemPac;
+        private System.Windows.Forms.TextBox tbxDestinoPac;
         private System.Windows.Forms.Button btnBuscarImagemPacote;
     }
 }
