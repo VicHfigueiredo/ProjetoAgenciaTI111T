@@ -20,20 +20,20 @@ namespace ProjetoAgenciaTI111T.Controller
 
             try
             {
-                cmd.Parameters.AddWithValue("@valorPac","");
-                cmd.Parameters.AddWithValue("@origemPac", "");
-                cmd.Parameters.AddWithValue("@destinoPac", "");
-                cmd.Parameters.AddWithValue("@dataidaPac", "");
-                cmd.Parameters.AddWithValue("@dataVoltaPac", "");
-                cmd.Parameters.AddWithValue("@descricaoPac", "");
-                cmd.Parameters.AddWithValue("@imagemPac", "");
+                cmd.Parameters.AddWithValue("@valorPac",Pacote.ValorPac);
+                cmd.Parameters.AddWithValue("@origemPac", Pacote.OrigemPac);
+                cmd.Parameters.AddWithValue("@destinoPac",Pacote.DestinoPac );
+                cmd.Parameters.AddWithValue("@dataidaPac",Pacote.DataIdaPac );
+                cmd.Parameters.AddWithValue("@dataVoltaPac",Pacote.DatavoltaPac );
+                cmd.Parameters.AddWithValue("@descricaoPac",Pacote.DescricaoPac );
+                cmd.Parameters.AddWithValue("@imagemPac",Pacote.ImagemPac );
 
                 SqlParameter nv = cmd.Parameters.AddWithValue("@codigoFun", SqlDbType.Int);
                 nv.Direction = ParameterDirection.Output;
                 cn.Open();
                 cmd.ExecuteNonQuery();
 
-                var resposta = MessageBox.Show("Cadastro do pacote efetuado com sucesso, deseja efetuar um novo registro?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                var resposta = MessageBox.Show("Cadastro Efetuado", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (resposta == DialogResult.Yes)
                 {
                     Pacote.Retorno = "Sim";

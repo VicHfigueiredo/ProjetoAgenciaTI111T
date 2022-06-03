@@ -22,9 +22,11 @@ namespace ProjetoAgenciaTI111T.View
 
         private void btnSalvarPacote_Click(object sender, EventArgs e)
         {
-            if (tbxOrigemPac.Text == "" | tbxDestinoPac.Text == "" | rtxDescricaoPacote.Text =="" | dataIdaPacote.Value > dataVoltaPacote.Value  | tbxValorPacote.Text == "" | pictureBoxFotoPacote.Image == null)
+            if (tbxOrigemPac.Text == "" | tbxDestinoPac.Text == "" | rtxDescricaoPacote.Text == "" | dataIdaPacote.Value > dataVoltaPacote.Value | tbxValorPacote.Text == "" | pictureBoxFotoPacote.Image == null)
             {
                 MessageBox.Show("Preencha todas as informações corretamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else { 
 
                 Pacote.OrigemPac = tbxOrigemPac.Text;
                 Pacote.DestinoPac = tbxDestinoPac.Text;
