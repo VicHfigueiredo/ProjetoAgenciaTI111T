@@ -45,5 +45,113 @@ namespace ProjetoAgenciaTI111T.Controller
                 throw;
             }
         }
+
+        public void pesquisarCodigoFuncionario()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
+            SqlCommand cmd = new SqlCommand("pPesquisarCodFuncionario", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@codigoFuncionario", Funcionarios.CodigoFun);
+                cn.Open();
+
+                var arrayDados = cmd.ExecuteReader();
+
+                if (arrayDados.Read())
+                {
+                    Funcionarios.CodigoFun = Convert.ToInt32(arrayDados["codigoFun"]);
+                    Funcionarios.NomeFun = arayDados['nomeFun'].ToString();
+                    Funcionarios.EmailFun = arrayDados["emailFun"].ToString();
+                    Funcionarios.SenhaFun = arrayDados["senhaFun"].ToString();
+                    Funcionarios.Retorno = "Sim";
+                }
+                else{
+                    MessageBox.Show("Codigo não localizado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Funcionarios.Retorno = "Não";
+
+                }
+                catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+          }
+        public void deletarFuncionario()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
+            SqlCommand cmd = new SqlCommand("pDeletarFuncionario", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                cmd.Parameters.AddWithValue("@codigoFuncionario", Funcionarios.CodigoFun);
+                cn.Open();
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Funcionario excluído com sucesso", "Exclusão", MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if(cn.State != ConnectionState.Closed)
+                {
+                    cn.Close();
+
+                }
+            }
+        }
+
+        public void alterarFuncionario()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
+            SqlCommand cmd = new SqlCommand("pAlterarFuncionario", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            try
+            {
+                cmd.Parameters.AddWithValue("@codigoFun", Funcionarios.CodigoFun);
+                cmd.Parameters.AddWithValue("@nomeFun", Funcionarios.NomeFun);
+                cmd.Parameters.AddWithValue("@emailFun", Funcionarios.EmailFun);
+                cmd.Parameters.AddWithValue("@senhaFun", Funcionarios.SenhaFun);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Funcionario alterado com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("O funcionario não foi alterado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if(cn.State != ConnectionState.Closed)
+                {
+                    cn.Close();
+                }
+            }
+        }
+
+        public static BlindigSource pesquisarNomeFuncionario()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
+            SqlCommand cmd = new SqlCommand("pPesquisarNomeFuncionario", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@nomeFun", Funcionarios.NomeFun);
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter sqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            SqlDataAdapter.Fill(table);
+
+            BlindingSource dados = new BlindingSource();
+            dados.DataSource = table;
+
+            return dados;
+        }
+            
+        }
     }
 }
