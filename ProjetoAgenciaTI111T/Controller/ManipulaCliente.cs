@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ProjetoAgenciaTI111T.Model;
 
 
+
 namespace ProjetoAgenciaTI111T.Controller
 {
     class ManipulaCliente
@@ -137,7 +138,7 @@ namespace ProjetoAgenciaTI111T.Controller
                 }
             }
 
-            public static BlindingSource pesquisarNomeCliente()
+            public static BindingSource pesquisarNomeCliente()
             {
                 SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
                 SqlCommand cmd = new SqlCommand("pPesquisarNomeCliente", cn);
@@ -153,7 +154,7 @@ namespace ProjetoAgenciaTI111T.Controller
 
                 sqlData.Fill(table);
 
-                BlindingSource dados = new BlindingSource();
+                BindingSource dados = new BindingSource();
                 dados.DataSource = table;
 
                 return dados;
@@ -164,6 +165,6 @@ namespace ProjetoAgenciaTI111T.Controller
 
 
         }
-    }
+    
 
 

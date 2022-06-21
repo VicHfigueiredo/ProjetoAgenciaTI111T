@@ -85,7 +85,7 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.cadastrarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
@@ -93,8 +93,9 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.pesquisarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
-            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.pesquisarToolStripMenuItem.Text = "Pesquisar";
+            this.pesquisarToolStripMenuItem.Click += new System.EventHandler(this.pesquisarToolStripMenuItem_Click);
             // 
             // funcionáriosToolStripMenuItem
             // 

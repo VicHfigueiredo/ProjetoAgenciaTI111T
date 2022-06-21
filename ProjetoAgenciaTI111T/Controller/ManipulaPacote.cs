@@ -68,11 +68,11 @@ namespace ProjetoAgenciaTI111T.Controller
                 if (arrayDados.Read())
                 {
                     Pacote.CodigoPac = Convert.ToInt32(arrayDados["codigoPac"]);
-                    Pacote.ValorPac = arrayDados["valorPac"].ToString();
+                    Pacote.ValorPac = Convert.ToDecimal(arrayDados["valorPac"]);
                     Pacote.OrigemPac = arrayDados["origemPac"].ToString();
                     Pacote.DestinoPac = arrayDados["destinoPac"].ToString();
-                    Pacote.DataIdaPac = arrayDados["dataidaPac"].ToString();
-                    Pacote.DatavoltaPac = arrayDados["datavoltaPac"].ToString();
+                    Pacote.DataIdaPac = Convert.ToDateTime(arrayDados["dataidaPac"]);
+                    Pacote.DatavoltaPac = Convert.ToDateTime(arrayDados["datavoltaPac"]);
                     Pacote.DescricaoPac = arrayDados["descricaoPac"].ToString();
                     Pacote.ImagemPac = (System.Array)arrayDados["imagemPac"];
                     Pacote.Retorno = "Sim";

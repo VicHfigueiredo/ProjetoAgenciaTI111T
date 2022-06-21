@@ -62,20 +62,21 @@ namespace ProjetoAgenciaTI111T.Controller
                 if (arrayDados.Read())
                 {
                     Funcionarios.CodigoFun = Convert.ToInt32(arrayDados["codigoFun"]);
-                    Funcionarios.NomeFun = arayDados['nomeFun'].ToString();
+                    Funcionarios.NomeFun = arrayDados["nomeFun"].ToString();
                     Funcionarios.EmailFun = arrayDados["emailFun"].ToString();
                     Funcionarios.SenhaFun = arrayDados["senhaFun"].ToString();
                     Funcionarios.Retorno = "Sim";
                 }
-                else{
+                else {
                     MessageBox.Show("Codigo não localizado", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Funcionarios.Retorno = "Não";
+                    Funcionarios.Retorno = "Sim";
 
                 }
-                catch(Exception e)
+
+            } catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                Funcionarios.Retorno = "Não";
             }
 
           }
@@ -90,7 +91,7 @@ namespace ProjetoAgenciaTI111T.Controller
                 cn.Open();
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Funcionario excluído com sucesso", "Exclusão", MessageBoxIcon.Error);
+                MessageBox.Show("Funcionario excluído com sucesso", "Exclusão");
             }
             finally
             {
@@ -132,7 +133,7 @@ namespace ProjetoAgenciaTI111T.Controller
             }
         }
 
-        public static BlindigSource pesquisarNomeFuncionario()
+        public static BindingSource pesquisarNomeFuncionario()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
             SqlCommand cmd = new SqlCommand("pPesquisarNomeFuncionario", cn);
@@ -142,11 +143,11 @@ namespace ProjetoAgenciaTI111T.Controller
             cn.Open();
             cmd.ExecuteNonQuery();
 
-            SqlDataAdapter sqlDataAdapter(cmd);
+            SqlDataAdapter sqlData = new  SqlDataAdapter(cmd);
             DataTable table = new DataTable();
-            SqlDataAdapter.Fill(table);
+            sqlData.Fill(table);
 
-            BlindingSource dados = new BlindingSource();
+            BindingSource dados = new BindingSource();
             dados.DataSource = table;
 
             return dados;
@@ -154,4 +155,4 @@ namespace ProjetoAgenciaTI111T.Controller
             
         }
     }
-}
+
