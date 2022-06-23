@@ -30,6 +30,7 @@ namespace ProjetoAgenciaTI111T.View
                 Funcionarios.NomeFun = tbxNomeFuncionario.Text;
                 Funcionarios.EmailFun = tbxEmailFuncionario.Text;
                 Funcionarios.SenhaFun = tbxSenhaFuncionario.Text;
+                
 
                 ManipulaFuncionario manipulaFuncionario = new ManipulaFuncionario();
                 manipulaFuncionario.cadastrarFuncionario();

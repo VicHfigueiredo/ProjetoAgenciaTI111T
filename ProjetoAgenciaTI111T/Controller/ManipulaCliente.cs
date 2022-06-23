@@ -52,7 +52,7 @@ namespace ProjetoAgenciaTI111T.Controller
         public void pesquisarCodigoCliente()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
-            SqlCommand cmd = new SqlCommand("pPesquisarCodCliente", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisaCodCliente", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try

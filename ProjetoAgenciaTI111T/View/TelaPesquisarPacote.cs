@@ -9,47 +9,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProjetoAgenciaTI111T.Controller;
 using ProjetoAgenciaTI111T.Model;
-using System.IO;
+
 namespace ProjetoAgenciaTI111T.View
 {
-    public partial class TelaPesquisarFuncionario : Form
+    public partial class TelaPesquisarPacote : Form
     {
-        public TelaPesquisarFuncionario()
+        public TelaPesquisarPacote()
         {
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void btnBuscarPacote_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBuscarFuncionario_Click(object sender, EventArgs e)
-        {
-            if (tbxCodigoFuncionario.Text == "")
+            if (tbxCodigoPacote.Text == "")
             {
                 MessageBox.Show("Digite um código de cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbxCodigoFuncionario.Text = string.Empty;
-                tbxCodigoFuncionario.Focus();
-                tbxCodigoFuncionario.SelectAll();
-                tbxCodigoFuncionario.Text = string.Empty;
-                tbxCodigoFuncionario.Text = string.Empty;
+                tbxCodigoPacote.Text = string.Empty;
+                tbxCodigoPacote.Focus();
+                tbxCodigoPacote.SelectAll();
+                tbxCodigoPacote.Text = string.Empty;
+                tbxCodigoPacote.Text = string.Empty;
             }
             else
             {
-                Funcionarios.CodigoFun = Convert.ToInt32(tbxCodigoFuncionario.Text);
+                Pacote.CodigoPac = Convert.ToInt32(tbxCodigoPacote.Text);
                 ManipulaFuncionario manipulaFuncionario = new ManipulaFuncionario();
                 manipulaFuncionario.pesquisarCodigoFuncionario();
 
-                tbxCodigoFuncionario.Text = Funcionarios.CodigoFun.ToString();
-                tbxNomeFuncionario.Text = Funcionarios.NomeFun;
-                tbxSenhaFuncionario.Text = Funcionarios.SenhaFun;
-                tbxEmailFuncionario.Text = Funcionarios.EmailFun;
+                tbxCodigoPacote.Text = Pacote.CodigoPac.ToString();
+                tbxValorPacote.Text = Pacote.ValorPac;
+                tbxOrigemPacote.Text = Pacote.OrigemPac;
+                tbxDestinoPacote.Text = Pacote.DestinoPac;
+                rtxDescricaoPacote.Text = Pacote.DescricaoPac;
 
                 if (Funcionarios.Retorno == "Não")
                 {
@@ -58,10 +49,9 @@ namespace ProjetoAgenciaTI111T.View
                     tbxCodigoFuncionario.SelectAll();
                     tbxCodigoFuncionario.Text = string.Empty;
                     tbxCodigoFuncionario.Text = string.Empty;
-             
+
                     return;
                 }
             }
-        }
     }
 }

@@ -49,12 +49,12 @@ namespace ProjetoAgenciaTI111T.Controller
         public void pesquisarCodigoFuncionario()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
-            SqlCommand cmd = new SqlCommand("pPesquisarCodFuncionario", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisaCodFuncionario", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
             {
-                cmd.Parameters.AddWithValue("@codigoFuncionario", Funcionarios.CodigoFun);
+                cmd.Parameters.AddWithValue("@codigoFun", Funcionarios.CodigoFun);
                 cn.Open();
 
                 var arrayDados = cmd.ExecuteReader();

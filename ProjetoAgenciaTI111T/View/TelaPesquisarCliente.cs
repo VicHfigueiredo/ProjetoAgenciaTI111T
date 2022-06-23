@@ -47,7 +47,7 @@ namespace ProjetoAgenciaTI111T.View
                 tbxSenhaCliente.Text = Clientes.SenhaCli;
 
                 MemoryStream ms = new MemoryStream((byte[])Clientes.ImagemCli);
-                pictureBoxFotoCliente = Image.FromStream(ms);
+                pictureBoxFotoCliente.Image = Image.FromStream(ms);
 
                 if (Clientes.Retorno == "Não")
                 {
@@ -65,6 +65,11 @@ namespace ProjetoAgenciaTI111T.View
         private void TelaPesquisarCliente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBuscarImagemCli_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
