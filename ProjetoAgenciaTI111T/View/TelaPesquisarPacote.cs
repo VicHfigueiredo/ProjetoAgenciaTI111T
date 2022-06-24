@@ -33,25 +33,26 @@ namespace ProjetoAgenciaTI111T.View
             else
             {
                 Pacote.CodigoPac = Convert.ToInt32(tbxCodigoPacote.Text);
-                ManipulaFuncionario manipulaFuncionario = new ManipulaFuncionario();
-                manipulaFuncionario.pesquisarCodigoFuncionario();
+                ManipulaPacote manipulaPacote = new ManipulaPacote();
+                manipulaPacote.pesquisarPacote();
 
                 tbxCodigoPacote.Text = Pacote.CodigoPac.ToString();
-                tbxValorPacote.Text = Pacote.ValorPac;
+                tbxValorPacote.Text = Convert.ToString(Pacote.ValorPac);
                 tbxOrigemPacote.Text = Pacote.OrigemPac;
                 tbxDestinoPacote.Text = Pacote.DestinoPac;
                 rtxDescricaoPacote.Text = Pacote.DescricaoPac;
 
                 if (Funcionarios.Retorno == "Não")
                 {
-                    tbxCodigoFuncionario.Text = string.Empty;
-                    tbxCodigoFuncionario.Focus();
-                    tbxCodigoFuncionario.SelectAll();
-                    tbxCodigoFuncionario.Text = string.Empty;
-                    tbxCodigoFuncionario.Text = string.Empty;
+                    tbxCodigoPacote.Text = string.Empty;
+                    tbxCodigoPacote.Focus();
+                    tbxCodigoPacote.SelectAll();
+                    tbxCodigoPacote.Text = string.Empty;
+                    tbxCodigoPacote.Text = string.Empty;
 
                     return;
                 }
             }
+        }
     }
 }

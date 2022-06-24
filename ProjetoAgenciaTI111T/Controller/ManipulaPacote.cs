@@ -55,7 +55,7 @@ namespace ProjetoAgenciaTI111T.Controller
         public void pesquisarPacote()
         {
             SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
-            SqlCommand cmd = new SqlCommand("pPesquisaCodPacote", cn);
+            SqlCommand cmd = new SqlCommand("pPesquisaCodPac", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try
@@ -101,7 +101,7 @@ namespace ProjetoAgenciaTI111T.Controller
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Pacote excluído com sucesso", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 MessageBox.Show("O pacote não pode ser excluído", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

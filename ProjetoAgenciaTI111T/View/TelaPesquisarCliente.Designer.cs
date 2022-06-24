@@ -204,6 +204,7 @@ namespace ProjetoAgenciaTI111T.View
             this.btnDeletarCli.TabIndex = 11;
             this.btnDeletarCli.Text = "Deletar";
             this.btnDeletarCli.UseVisualStyleBackColor = true;
+            this.btnDeletarCli.Click += new System.EventHandler(this.btnDeletarCli_Click);
             // 
             // pictureBoxFotoCliente
             // 
@@ -222,6 +223,7 @@ namespace ProjetoAgenciaTI111T.View
             this.btnAlterarCli.TabIndex = 9;
             this.btnAlterarCli.Text = "Alterar";
             this.btnAlterarCli.UseVisualStyleBackColor = true;
+            this.btnAlterarCli.Click += new System.EventHandler(this.btnAlterarCli_Click);
             // 
             // tbxSenhaCliente
             // 

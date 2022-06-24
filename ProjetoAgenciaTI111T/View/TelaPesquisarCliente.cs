@@ -42,12 +42,6 @@ namespace ProjetoAgenciaTI111T.View
                 ManipulaCliente manipulaCliente = new ManipulaCliente();
                 manipulaCliente.pesquisarCodigoCliente();
 
-                tbxCodigoCliente.Text = Clientes.CodigoCli.ToString();
-                tbxNomeCliente.Text = Clientes.NomeCli;
-                tbxSenhaCliente.Text = Clientes.SenhaCli;
-
-                MemoryStream ms = new MemoryStream((byte[])Clientes.ImagemCli);
-                pictureBoxFotoCliente.Image = Image.FromStream(ms);
 
                 if (Clientes.Retorno == "Não")
                 {
@@ -59,6 +53,16 @@ namespace ProjetoAgenciaTI111T.View
                     pictureBoxFotoCliente.Image = null;
                     return;
                 }
+                else
+                {
+
+                    tbxCodigoCliente.Text = Clientes.CodigoCli.ToString();
+                    tbxNomeCliente.Text = Clientes.NomeCli;
+                    tbxSenhaCliente.Text = Clientes.SenhaCli;
+
+                    MemoryStream ms = new MemoryStream((byte[])Clientes.ImagemCli);
+                    pictureBoxFotoCliente.Image = Image.FromStream(ms);
+                }
             }
         }
 
@@ -69,7 +73,69 @@ namespace ProjetoAgenciaTI111T.View
 
         private void btnBuscarImagemCli_Click(object sender, EventArgs e)
         {
-            
+            openFileDialogPesquisar.Filter = "Escolha uma imagem (*.jpg;*.png;*jpeg)" + "| *.jpg; *.jpeg;.png";
+            if(openFileDialogPesquisar.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxFotoCliente.Image = Image.FromFile(openFileDialogPesquisar.FileName);
+            }
+        }
+
+        private void btnDeletarCli_Click(object sender, EventArgs e)
+        {
+            if (tbxCodigoCliente.Text == "")
+            {
+                MessageBox.Show("Digite um código de cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbxCodigoCliente.Text = string.Empty;
+                tbxCodigoCliente.Focus();
+                tbxCodigoCliente.SelectAll();
+                tbxEmailCliente.Text = string.Empty;
+                tbxSenhaCliente.Text = string.Empty;
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja excluir o cliente" + tbxCodigoCliente.Text + " ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if(resposta == DialogResult.Yes)
+                {
+                    Clientes.CodigoCli = Convert.ToInt32(tbxCodigoCliente.Text);
+
+                    ManipulaCliente manipulaCliente = new ManipulaCliente();
+                    manipulaCliente.deletarCliente();
+                }
+            }
+        }
+
+        private void btnAlterarCli_Click(object sender, EventArgs e)
+        {
+            if (tbxCodigoCliente.Text == "")
+            {
+                MessageBox.Show("Digite um código de cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbxCodigoCliente.Text = string.Empty;
+                tbxCodigoCliente.Focus();
+                tbxCodigoCliente.SelectAll();
+                tbxEmailCliente.Text = string.Empty;
+                tbxSenhaCliente.Text = string.Empty;
+                pictureBoxFotoCliente.Image = null;
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja alterar os dados do cliente" + tbxCodigoCliente.Text + " ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    Clientes.CodigoCli = Convert.ToInt32(tbxCodigoCliente.Text);
+                    Clientes.NomeCli = tbxNomeCliente.Text;
+                    Clientes.EmailCli = tbxEmailCliente.Text;
+                    Clientes.SenhaCli = tbxSenhaCliente.Text;
+
+                    MemoryStream ms = new MemoryStream();
+                    pictureBoxFotoCliente.Image.Save(ms,pictureBoxFotoCliente.Image.RawFormat);
+                    Clientes.ImagemCli = ms.ToArray();
+
+                    ManipulaCliente manipulaCliente = new ManipulaCliente();
+                    manipulaCliente.alterarCliente();
+                }
+            }
         }
     }
 }

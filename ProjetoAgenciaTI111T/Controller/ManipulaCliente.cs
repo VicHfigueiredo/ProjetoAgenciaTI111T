@@ -94,11 +94,15 @@ namespace ProjetoAgenciaTI111T.Controller
                 cmd.CommandType = CommandType.StoredProcedure;
                 try
                 {
-                    cmd.Parameters.AddWithValue("2codigoCli", Clientes.CodigoCli);
+                    cmd.Parameters.AddWithValue("codigoCli", Clientes.CodigoCli);
                     cn.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("O cliente não pode ser excluido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cliente foi excluído", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+            catch (Exception)
+            {
+                MessageBox.Show("O cliente não pode ser excluido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
                 finally
                 {
                     if (cn.State != ConnectionState.Closed)
