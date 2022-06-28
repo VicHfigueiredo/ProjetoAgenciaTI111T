@@ -28,7 +28,7 @@ namespace ProjetoAgenciaTI111T.Controller
                 cmd.Parameters.AddWithValue("@descricaoPac",Pacote.DescricaoPac );
                 cmd.Parameters.AddWithValue("@imagemPac",Pacote.ImagemPac );
 
-                SqlParameter nv = cmd.Parameters.AddWithValue("@codigoFun", SqlDbType.Int);
+                SqlParameter nv = cmd.Parameters.AddWithValue("@codigoPac", SqlDbType.Int);
                 nv.Direction = ParameterDirection.Output;
                 cn.Open();
                 cmd.ExecuteNonQuery();

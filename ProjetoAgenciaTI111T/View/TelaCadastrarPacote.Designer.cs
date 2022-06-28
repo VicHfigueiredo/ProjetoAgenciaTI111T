@@ -190,11 +190,11 @@ namespace ProjetoAgenciaTI111T.View
             // 
             // btnBuscarImagemPacote
             // 
-            this.btnBuscarImagemPacote.Location = new System.Drawing.Point(589, 245);
+            this.btnBuscarImagemPacote.Location = new System.Drawing.Point(557, 232);
             this.btnBuscarImagemPacote.Name = "btnBuscarImagemPacote";
-            this.btnBuscarImagemPacote.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarImagemPacote.Size = new System.Drawing.Size(124, 23);
             this.btnBuscarImagemPacote.TabIndex = 19;
-            this.btnBuscarImagemPacote.Text = "button1";
+            this.btnBuscarImagemPacote.Text = "Buscar imagem";
             this.btnBuscarImagemPacote.UseVisualStyleBackColor = true;
             this.btnBuscarImagemPacote.Click += new System.EventHandler(this.btnBuscarImagemPacote_Click_1);
             // 

@@ -37,28 +37,31 @@ namespace ProjetoAgenciaTI111T.View
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnDeletarPacote = new System.Windows.Forms.Button();
+            this.btnAlterarPacote = new System.Windows.Forms.Button();
+            this.btnBuscarPacote = new System.Windows.Forms.Button();
             this.btnBuscarImagemPacote = new System.Windows.Forms.Button();
             this.tbxCodigoPacote = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.rtxDescricaoPacote = new System.Windows.Forms.RichTextBox();
-            this.dateTimePickerVolta = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerIda = new System.Windows.Forms.DateTimePicker();
+            this.dateVolta = new System.Windows.Forms.DateTimePicker();
+            this.dateIda = new System.Windows.Forms.DateTimePicker();
             this.tbxDestinoPacote = new System.Windows.Forms.TextBox();
             this.tbxOrigemPacote = new System.Windows.Forms.TextBox();
             this.tbxValorPacote = new System.Windows.Forms.TextBox();
-            this.pictureBoxPesquisar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFotoPacote = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscarPacote = new System.Windows.Forms.Button();
+            this.openFileDialogPesquisarPacote = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPesquisar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPacote)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -131,17 +134,19 @@ namespace ProjetoAgenciaTI111T.View
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnDeletarPacote);
+            this.tabPage2.Controls.Add(this.btnAlterarPacote);
             this.tabPage2.Controls.Add(this.btnBuscarPacote);
             this.tabPage2.Controls.Add(this.btnBuscarImagemPacote);
             this.tabPage2.Controls.Add(this.tbxCodigoPacote);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.rtxDescricaoPacote);
-            this.tabPage2.Controls.Add(this.dateTimePickerVolta);
-            this.tabPage2.Controls.Add(this.dateTimePickerIda);
+            this.tabPage2.Controls.Add(this.dateVolta);
+            this.tabPage2.Controls.Add(this.dateIda);
             this.tabPage2.Controls.Add(this.tbxDestinoPacote);
             this.tabPage2.Controls.Add(this.tbxOrigemPacote);
             this.tabPage2.Controls.Add(this.tbxValorPacote);
-            this.tabPage2.Controls.Add(this.pictureBoxPesquisar);
+            this.tabPage2.Controls.Add(this.pictureBoxFotoPacote);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
@@ -155,6 +160,36 @@ namespace ProjetoAgenciaTI111T.View
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pesquisar por código";
             // 
+            // btnDeletarPacote
+            // 
+            this.btnDeletarPacote.Location = new System.Drawing.Point(621, 278);
+            this.btnDeletarPacote.Name = "btnDeletarPacote";
+            this.btnDeletarPacote.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletarPacote.TabIndex = 22;
+            this.btnDeletarPacote.Text = "Deletar";
+            this.btnDeletarPacote.UseVisualStyleBackColor = true;
+            this.btnDeletarPacote.Click += new System.EventHandler(this.btnDeletarPacote_Click);
+            // 
+            // btnAlterarPacote
+            // 
+            this.btnAlterarPacote.Location = new System.Drawing.Point(528, 278);
+            this.btnAlterarPacote.Name = "btnAlterarPacote";
+            this.btnAlterarPacote.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterarPacote.TabIndex = 21;
+            this.btnAlterarPacote.Text = "Alterar";
+            this.btnAlterarPacote.UseVisualStyleBackColor = true;
+            this.btnAlterarPacote.Click += new System.EventHandler(this.btnAlterarPacote_Click);
+            // 
+            // btnBuscarPacote
+            // 
+            this.btnBuscarPacote.Location = new System.Drawing.Point(420, 18);
+            this.btnBuscarPacote.Name = "btnBuscarPacote";
+            this.btnBuscarPacote.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarPacote.TabIndex = 20;
+            this.btnBuscarPacote.Text = "Buscar";
+            this.btnBuscarPacote.UseVisualStyleBackColor = true;
+            this.btnBuscarPacote.Click += new System.EventHandler(this.btnBuscarPacote_Click);
+            // 
             // btnBuscarImagemPacote
             // 
             this.btnBuscarImagemPacote.Location = new System.Drawing.Point(528, 176);
@@ -163,6 +198,7 @@ namespace ProjetoAgenciaTI111T.View
             this.btnBuscarImagemPacote.TabIndex = 19;
             this.btnBuscarImagemPacote.Text = "Buscar Imagem";
             this.btnBuscarImagemPacote.UseVisualStyleBackColor = true;
+            this.btnBuscarImagemPacote.Click += new System.EventHandler(this.btnBuscarImagemPacote_Click);
             // 
             // tbxCodigoPacote
             // 
@@ -184,23 +220,23 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.rtxDescricaoPacote.Location = new System.Drawing.Point(108, 237);
             this.rtxDescricaoPacote.Name = "rtxDescricaoPacote";
-            this.rtxDescricaoPacote.Size = new System.Drawing.Size(426, 77);
+            this.rtxDescricaoPacote.Size = new System.Drawing.Size(387, 65);
             this.rtxDescricaoPacote.TabIndex = 16;
             this.rtxDescricaoPacote.Text = "";
             // 
-            // dateTimePickerVolta
+            // dateVolta
             // 
-            this.dateTimePickerVolta.Location = new System.Drawing.Point(116, 194);
-            this.dateTimePickerVolta.Name = "dateTimePickerVolta";
-            this.dateTimePickerVolta.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePickerVolta.TabIndex = 15;
+            this.dateVolta.Location = new System.Drawing.Point(116, 194);
+            this.dateVolta.Name = "dateVolta";
+            this.dateVolta.Size = new System.Drawing.Size(200, 23);
+            this.dateVolta.TabIndex = 15;
             // 
-            // dateTimePickerIda
+            // dateIda
             // 
-            this.dateTimePickerIda.Location = new System.Drawing.Point(116, 160);
-            this.dateTimePickerIda.Name = "dateTimePickerIda";
-            this.dateTimePickerIda.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePickerIda.TabIndex = 14;
+            this.dateIda.Location = new System.Drawing.Point(116, 160);
+            this.dateIda.Name = "dateIda";
+            this.dateIda.Size = new System.Drawing.Size(200, 23);
+            this.dateIda.TabIndex = 14;
             // 
             // tbxDestinoPacote
             // 
@@ -223,14 +259,14 @@ namespace ProjetoAgenciaTI111T.View
             this.tbxValorPacote.Size = new System.Drawing.Size(95, 23);
             this.tbxValorPacote.TabIndex = 8;
             // 
-            // pictureBoxPesquisar
+            // pictureBoxFotoPacote
             // 
-            this.pictureBoxPesquisar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBoxPesquisar.Location = new System.Drawing.Point(515, 47);
-            this.pictureBoxPesquisar.Name = "pictureBoxPesquisar";
-            this.pictureBoxPesquisar.Size = new System.Drawing.Size(151, 114);
-            this.pictureBoxPesquisar.TabIndex = 7;
-            this.pictureBoxPesquisar.TabStop = false;
+            this.pictureBoxFotoPacote.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pictureBoxFotoPacote.Location = new System.Drawing.Point(515, 47);
+            this.pictureBoxFotoPacote.Name = "pictureBoxFotoPacote";
+            this.pictureBoxFotoPacote.Size = new System.Drawing.Size(151, 114);
+            this.pictureBoxFotoPacote.TabIndex = 7;
+            this.pictureBoxFotoPacote.TabStop = false;
             // 
             // label7
             // 
@@ -286,15 +322,9 @@ namespace ProjetoAgenciaTI111T.View
             this.label2.TabIndex = 0;
             this.label2.Text = "Valor:";
             // 
-            // btnBuscarPacote
+            // openFileDialogPesquisarPacote
             // 
-            this.btnBuscarPacote.Location = new System.Drawing.Point(420, 18);
-            this.btnBuscarPacote.Name = "btnBuscarPacote";
-            this.btnBuscarPacote.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarPacote.TabIndex = 20;
-            this.btnBuscarPacote.Text = "Buscar";
-            this.btnBuscarPacote.UseVisualStyleBackColor = true;
-            this.btnBuscarPacote.Click += new System.EventHandler(this.btnBuscarPacote_Click);
+            this.openFileDialogPesquisarPacote.FileName = "openFileDialog1";
             // 
             // TelaPesquisarPacote
             // 
@@ -312,7 +342,7 @@ namespace ProjetoAgenciaTI111T.View
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPesquisar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPacote)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,10 +360,10 @@ namespace ProjetoAgenciaTI111T.View
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBoxPesquisar;
+        private System.Windows.Forms.PictureBox pictureBoxFotoPacote;
         private System.Windows.Forms.RichTextBox rtxDescricaoPacote;
-        private System.Windows.Forms.DateTimePicker dateTimePickerVolta;
-        private System.Windows.Forms.DateTimePicker dateTimePickerIda;
+        private System.Windows.Forms.DateTimePicker dateVolta;
+        private System.Windows.Forms.DateTimePicker dateIda;
         private System.Windows.Forms.TextBox tbxDestinoPacote;
         private System.Windows.Forms.TextBox tbxOrigemPacote;
         private System.Windows.Forms.TextBox tbxValorPacote;
@@ -345,5 +375,8 @@ namespace ProjetoAgenciaTI111T.View
         private System.Windows.Forms.TextBox tbxCodigoPacote;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnBuscarPacote;
+        private System.Windows.Forms.Button btnDeletarPacote;
+        private System.Windows.Forms.Button btnAlterarPacote;
+        private System.Windows.Forms.OpenFileDialog openFileDialogPesquisarPacote;
     }
 }

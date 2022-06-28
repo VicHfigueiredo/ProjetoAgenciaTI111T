@@ -87,7 +87,7 @@ namespace ProjetoAgenciaTI111T.Controller
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
-                cmd.Parameters.AddWithValue("@codigoFuncionario", Funcionarios.CodigoFun);
+                cmd.Parameters.AddWithValue("@codigoFun", Funcionarios.CodigoFun);
                 cn.Open();
                 cmd.ExecuteNonQuery();
 

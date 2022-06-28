@@ -63,5 +63,60 @@ namespace ProjetoAgenciaTI111T.View
                 }
             }
         }
+
+        private void tbxDeletarFuncionario_Click(object sender, EventArgs e)
+        {
+            if (tbxCodigoFuncionario.Text == "")
+            {
+                MessageBox.Show("Digite um código de cliente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbxCodigoFuncionario.Text = string.Empty;
+                tbxCodigoFuncionario.Focus();
+                tbxCodigoFuncionario.SelectAll();
+                tbxCodigoFuncionario.Text = string.Empty;
+                tbxCodigoFuncionario.Text = string.Empty;
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja excluir o funcionário" + tbxCodigoFuncionario + "?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if(resposta == DialogResult.Yes)
+                {
+                    Funcionarios.CodigoFun = Convert.ToInt32(tbxCodigoFuncionario.Text);
+
+                    ManipulaFuncionario manipulaFuncionario = new ManipulaFuncionario();
+                    manipulaFuncionario.deletarFuncionario();
+                }
+            }
+        }
+
+        private void btnAlterarFuncionario_Click(object sender, EventArgs e)
+        {
+            if(tbxCodigoFuncionario.Text == "")
+            {
+                MessageBox.Show("Digite o código do funcionário", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbxCodigoFuncionario.Text = string.Empty;
+                tbxCodigoFuncionario.Focus();
+                tbxCodigoFuncionario.SelectAll();
+                tbxNomeFuncionario.Text = string.Empty;
+                tbxEmailFuncionario.Text = string.Empty;
+                tbxSenhaFuncionario.Text = string.Empty;
+
+            }
+            else
+            {
+                var resposta = MessageBox.Show("Deseja alterar os dados do funcionário" + tbxNomeFuncionario + "?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+
+                if(resposta == DialogResult.Yes)
+                {
+                    Funcionarios.CodigoFun = Convert.ToInt32(tbxCodigoFuncionario.Text);
+                    Funcionarios.NomeFun = tbxNomeFuncionario.Text;
+                    Funcionarios.EmailFun = tbxEmailFuncionario.Text;
+                    Funcionarios.SenhaFun = tbxSenhaFun.Text;
+
+                    ManipulaFuncionario manipulaFuncionario = new ManipulaFuncionario();
+                    manipulaFuncionario.alterarFuncionario();
+                }
+            }
+        }
     }
 }

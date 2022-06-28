@@ -121,7 +121,7 @@ namespace ProjetoAgenciaTI111T.View
             {
                 var resposta = MessageBox.Show("Deseja alterar os dados do cliente" + tbxCodigoCliente.Text + " ?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
-                if (resposta == DialogResult.Yes)
+                if (resposta == DialogResult.OK)
                 {
                     Clientes.CodigoCli = Convert.ToInt32(tbxCodigoCliente.Text);
                     Clientes.NomeCli = tbxNomeCliente.Text;

@@ -199,6 +199,7 @@ namespace ProjetoAgenciaTI111T.View
             this.tbxDeletarFuncionario.TabIndex = 6;
             this.tbxDeletarFuncionario.Text = "Deletar";
             this.tbxDeletarFuncionario.UseVisualStyleBackColor = true;
+            this.tbxDeletarFuncionario.Click += new System.EventHandler(this.tbxDeletarFuncionario_Click);
             // 
             // btnAlterarFuncionario
             // 
@@ -208,6 +209,7 @@ namespace ProjetoAgenciaTI111T.View
             this.btnAlterarFuncionario.TabIndex = 5;
             this.btnAlterarFuncionario.Text = "Alterar";
             this.btnAlterarFuncionario.UseVisualStyleBackColor = true;
+            this.btnAlterarFuncionario.Click += new System.EventHandler(this.btnAlterarFuncionario_Click);
             // 
             // btnBuscarFuncionario
             // 
