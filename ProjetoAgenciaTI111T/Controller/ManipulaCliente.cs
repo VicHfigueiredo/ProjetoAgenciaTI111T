@@ -145,7 +145,7 @@ namespace ProjetoAgenciaTI111T.Controller
             public static BindingSource pesquisarNomeCliente()
             {
                 SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
-                SqlCommand cmd = new SqlCommand("pPesquisarNomeCliente", cn);
+                SqlCommand cmd = new SqlCommand("pPesquisaNomeCliente", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@nomeCli", Clientes.NomeCli);

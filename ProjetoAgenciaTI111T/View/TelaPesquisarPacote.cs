@@ -137,5 +137,28 @@ namespace ProjetoAgenciaTI111T.View
                 }
             }
         }
+
+        private void btnBucarPacoteNome_Click(object sender, EventArgs e)
+        {
+            if(tbxOrigemPac.Text == "") {
+                MessageBox.Show("Preencha o nome do pacote", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
+            Pacote.OrigemPac = tbxOrigemPac.Text;
+
+            dataGridViewPacote.DataSource = ManipulaPacote.pesquisarOrigemFuncionario();
+
+            dataGridViewPacote.Columns[0].Visible = false;
+            dataGridViewPacote.Columns[1].Visible = false;
+            dataGridViewPacote.Columns[2].Visible = false;
+            dataGridViewPacote.Columns[3].HeaderCell.Value = "Código";
+            dataGridViewPacote.Columns[4].HeaderCell.Value = "Valor";
+            dataGridViewPacote.Columns[5].HeaderCell.Value = "Origem";
+            dataGridViewPacote.Columns[5].HeaderCell.Value = "Destino";
+            dataGridViewPacote.Columns[5].HeaderCell.Value = "Data da ida";
+            dataGridViewPacote.Columns[5].HeaderCell.Value = "Data da volta";
+            dataGridViewPacote.Columns[6].Visible = false;
+        }
     }
 }

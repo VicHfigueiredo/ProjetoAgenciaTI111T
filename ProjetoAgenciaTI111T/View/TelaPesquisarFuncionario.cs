@@ -118,5 +118,29 @@ namespace ProjetoAgenciaTI111T.View
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if(tbxNomeFun.Text == "")
+            {
+                MessageBox.Show("Preencha com o código do funcionário", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            
+
+            Funcionarios.NomeFun = tbxNomeFun.Text;
+
+            dataGridViewFuncionario.DataSource = ManipulaFuncionario.pesquisarNomeFuncionario();
+
+            dataGridViewFuncionario.Columns[0].Visible = false;
+            dataGridViewFuncionario.Columns[1].Visible = false;
+            dataGridViewFuncionario.Columns[2].Visible = false;
+            dataGridViewFuncionario.Columns[3].HeaderCell.Value = "Código";
+            dataGridViewFuncionario.Columns[4].HeaderCell.Value = "Nome";
+            dataGridViewFuncionario.Columns[5].HeaderCell.Value = "Email";
+            dataGridViewFuncionario.Columns[6].Visible = false;
+
+
+        }
     }
 }

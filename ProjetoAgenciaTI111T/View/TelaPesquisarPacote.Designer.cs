@@ -32,9 +32,15 @@ namespace ProjetoAgenciaTI111T.View
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dataGridViewPacote = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBucarPacoteNome = new System.Windows.Forms.Button();
+            this.tbxOrigemPac = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnDeletarPacote = new System.Windows.Forms.Button();
@@ -59,7 +65,7 @@ namespace ProjetoAgenciaTI111T.View
             this.openFileDialogPesquisarPacote = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPacote)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPacote)).BeginInit();
             this.SuspendLayout();
@@ -86,9 +92,9 @@ namespace ProjetoAgenciaTI111T.View
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.dataGridViewPacote);
+            this.tabPage1.Controls.Add(this.btnBucarPacoteNome);
+            this.tabPage1.Controls.Add(this.tbxOrigemPac);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -98,39 +104,78 @@ namespace ProjetoAgenciaTI111T.View
             this.tabPage1.Text = "Pesquisar por nome";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridViewPacote
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(630, 221);
-            this.dataGridView1.TabIndex = 3;
+            this.dataGridViewPacote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPacote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
+            this.dataGridViewPacote.Location = new System.Drawing.Point(47, 74);
+            this.dataGridViewPacote.Name = "dataGridViewPacote";
+            this.dataGridViewPacote.RowHeadersVisible = false;
+            this.dataGridViewPacote.RowTemplate.Height = 25;
+            this.dataGridViewPacote.Size = new System.Drawing.Size(630, 221);
+            this.dataGridViewPacote.TabIndex = 3;
             // 
-            // button1
+            // Column1
             // 
-            this.button1.Location = new System.Drawing.Point(581, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Column1.HeaderText = "Código";
+            this.Column1.Name = "Column1";
             // 
-            // textBox3
+            // Column2
             // 
-            this.textBox3.Location = new System.Drawing.Point(163, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(374, 23);
-            this.textBox3.TabIndex = 1;
+            this.Column2.HeaderText = "Valor";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Origem";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Destino";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Data da ida";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Data da volta";
+            this.Column6.Name = "Column6";
+            // 
+            // btnBucarPacoteNome
+            // 
+            this.btnBucarPacoteNome.Location = new System.Drawing.Point(581, 29);
+            this.btnBucarPacoteNome.Name = "btnBucarPacoteNome";
+            this.btnBucarPacoteNome.Size = new System.Drawing.Size(75, 23);
+            this.btnBucarPacoteNome.TabIndex = 2;
+            this.btnBucarPacoteNome.Text = "Buscar";
+            this.btnBucarPacoteNome.UseVisualStyleBackColor = true;
+            this.btnBucarPacoteNome.Click += new System.EventHandler(this.btnBucarPacoteNome_Click);
+            // 
+            // tbxOrigemPac
+            // 
+            this.tbxOrigemPac.Location = new System.Drawing.Point(163, 29);
+            this.tbxOrigemPac.Name = "tbxOrigemPac";
+            this.tbxOrigemPac.Size = new System.Drawing.Size(374, 23);
+            this.tbxOrigemPac.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(47, 29);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 15);
+            this.label9.Size = new System.Drawing.Size(50, 15);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Nome do pacote:";
+            this.label9.Text = "Origem:";
             // 
             // tabPage2
             // 
@@ -339,7 +384,7 @@ namespace ProjetoAgenciaTI111T.View
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPacote)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFotoPacote)).EndInit();
@@ -368,9 +413,9 @@ namespace ProjetoAgenciaTI111T.View
         private System.Windows.Forms.TextBox tbxOrigemPacote;
         private System.Windows.Forms.TextBox tbxValorPacote;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridView dataGridViewPacote;
+        private System.Windows.Forms.Button btnBucarPacoteNome;
+        private System.Windows.Forms.TextBox tbxOrigemPac;
         private System.Windows.Forms.Button btnBuscarImagemPacote;
         private System.Windows.Forms.TextBox tbxCodigoPacote;
         private System.Windows.Forms.Label label10;
@@ -378,5 +423,11 @@ namespace ProjetoAgenciaTI111T.View
         private System.Windows.Forms.Button btnDeletarPacote;
         private System.Windows.Forms.Button btnAlterarPacote;
         private System.Windows.Forms.OpenFileDialog openFileDialogPesquisarPacote;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
