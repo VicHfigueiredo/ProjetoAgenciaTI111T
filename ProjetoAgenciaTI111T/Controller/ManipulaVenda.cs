@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using ProjetoAgenciaTI111T.Model;
+using ProjetoAgenciaTI111T.Controller;
 using System.IO;
+using System.Windows.Forms;
+
 
 namespace ProjetoAgenciaTI111T.Controller
 {
@@ -16,7 +19,7 @@ namespace ProjetoAgenciaTI111T.Controller
         {
 
 
-            SqlConnection cn = new SqlConnection(ConexaoBanco());
+            SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
             SqlCommand cmd = new SqlCommand("pCadastrarVendas", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -32,8 +35,20 @@ namespace ProjetoAgenciaTI111T.Controller
                 cn.Open();
                 cmd.ExecuteNonQuery();
 
-   
-            
+                var resposta = MessageBox.Show("Cadastro do Venda efetuado com sucesso, deseja efetuar um novo registro?",
+                                 "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation
+                                 );
+
+                if (resposta == DialogResult.Yes)
+                {
+                    Venda.Retorno = "Sim";
+                    return;
+                }
+                else
+                {
+                    Venda.Retorno = "Não";
+                    return;
+                }
             }
             catch
             {
@@ -42,10 +57,6 @@ namespace ProjetoAgenciaTI111T.Controller
 
         }
 
-        private string ConexaoBanco()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
