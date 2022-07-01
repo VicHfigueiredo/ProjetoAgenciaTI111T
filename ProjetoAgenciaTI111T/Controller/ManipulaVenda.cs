@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using ProjetoAgenciaTI111T.Model;
+using System.IO;
 
 namespace ProjetoAgenciaTI111T.Controller
 {
@@ -15,22 +17,30 @@ namespace ProjetoAgenciaTI111T.Controller
 
 
             SqlConnection cn = new SqlConnection(ConexaoBanco());
-            SqlCommand cmd = new SqlCommand("pCadastrarVenda", cn);
+            SqlCommand cmd = new SqlCommand("pCadastrarVendas", cn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             try {
-                cmd.Parameters.AddWithValue("@codigoCliFK", "");
-                cmd.Parameters.AddWithValue("@codigoFunFK", "");
-                cmd.Parameters.AddWithValue("@codigoPacFK", "");
-                cmd.Parameters.AddWithValue("@pagoVen", "");
+                cmd.Parameters.AddWithValue("@pagoVen", Venda.PagoVenda);
+                cmd.Parameters.AddWithValue("@codigoCliFK", Clientes.CodigoCli);
+                cmd.Parameters.AddWithValue("@codigoFunFK",Funcionarios.CodigoFun );
+                cmd.Parameters.AddWithValue("@codigoPacFK", Pacote.CodigoPac);
+                
+
+                SqlParameter nv = cmd.Parameters.AddWithValue("@codigoVen", SqlDbType.Int);
+                nv.Direction = ParameterDirection.Output;
+                cn.Open();
+                cmd.ExecuteNonQuery();
+
+   
+            
+            }
+            catch
+            {
 
             }
-            catch (Exception)
-            {
-                throw;
-            }
-              
-    }
+
+        }
 
         private string ConexaoBanco()
         {

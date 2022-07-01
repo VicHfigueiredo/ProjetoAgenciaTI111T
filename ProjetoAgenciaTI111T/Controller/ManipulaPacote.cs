@@ -161,6 +161,25 @@ namespace ProjetoAgenciaTI111T.Controller
 
             return dados;
         }
+        public static BindingSource pesquisarDestinoFuncionario()
+        {
+            SqlConnection cn = new SqlConnection(ConexaoBanco.conectar());
+            SqlCommand cmd = new SqlCommand("pPesquisaDestinoPacote", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@destinoPac", Pacote.DestinoPac);
+            cn.Open();
+            cmd.ExecuteNonQuery();
+
+            SqlDataAdapter sqlData = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            sqlData.Fill(table);
+
+            BindingSource dados = new BindingSource();
+            dados.DataSource = table;
+
+            return dados;
+        }
 
     }
 }

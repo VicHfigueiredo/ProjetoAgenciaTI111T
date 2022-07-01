@@ -111,7 +111,7 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.cadastrarToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cadastrarToolStripMenuItem1.Name = "cadastrarToolStripMenuItem1";
-            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.cadastrarToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.cadastrarToolStripMenuItem1.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
             // 
@@ -119,7 +119,7 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.pesquisarToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pesquisarToolStripMenuItem1.Name = "pesquisarToolStripMenuItem1";
-            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.pesquisarToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.pesquisarToolStripMenuItem1.Text = "Pesquisar";
             this.pesquisarToolStripMenuItem1.Click += new System.EventHandler(this.pesquisarToolStripMenuItem1_Click);
             // 
@@ -137,7 +137,7 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.cadastrarToolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cadastrarToolStripMenuItem2.Name = "cadastrarToolStripMenuItem2";
-            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.cadastrarToolStripMenuItem2.Size = new System.Drawing.Size(149, 26);
             this.cadastrarToolStripMenuItem2.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem2.Click += new System.EventHandler(this.cadastrarToolStripMenuItem2_Click);
             // 
@@ -145,7 +145,7 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.pesquisarToolStripMenuItem3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pesquisarToolStripMenuItem3.Name = "pesquisarToolStripMenuItem3";
-            this.pesquisarToolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.pesquisarToolStripMenuItem3.Size = new System.Drawing.Size(149, 26);
             this.pesquisarToolStripMenuItem3.Text = "Pesquisar";
             this.pesquisarToolStripMenuItem3.Click += new System.EventHandler(this.pesquisarToolStripMenuItem3_Click);
             // 
@@ -163,14 +163,15 @@ namespace ProjetoAgenciaTI111T.View
             // 
             this.registrarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.registrarToolStripMenuItem.Text = "Registrar";
+            this.registrarToolStripMenuItem.Click += new System.EventHandler(this.registrarToolStripMenuItem_Click);
             // 
             // pesquisarToolStripMenuItem2
             // 
             this.pesquisarToolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pesquisarToolStripMenuItem2.Name = "pesquisarToolStripMenuItem2";
-            this.pesquisarToolStripMenuItem2.Size = new System.Drawing.Size(148, 26);
+            this.pesquisarToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.pesquisarToolStripMenuItem2.Text = "Pesquisar";
             // 
             // pictureBox1

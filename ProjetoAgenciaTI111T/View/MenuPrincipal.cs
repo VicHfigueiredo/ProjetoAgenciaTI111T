@@ -62,5 +62,11 @@ namespace ProjetoAgenciaTI111T.View
             TelaPesquisarPacote telaPesquisarPacote = new TelaPesquisarPacote();
             telaPesquisarPacote.Show();
         }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaRegistrarVenda telaRegistrarVenda = new TelaRegistrarVenda();
+            telaRegistrarVenda.Show();
+        }
     }
 }
